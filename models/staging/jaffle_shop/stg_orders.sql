@@ -5,3 +5,4 @@ select
         status
 
 from {{ source('jaffle_shop', 'orders') }}
+{{limit_data(column_name='order_date',  days_limit=3000)}}
